@@ -1,4 +1,2 @@
-<?= Elementer::Create('block', [
-    "phone" => $phone,
-    "email" => $email
-])?>
+<h1>Index php <?= print_r(__FILE__); ?></h1>
+ASd

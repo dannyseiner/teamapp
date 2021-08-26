@@ -1,7 +1,8 @@
-<?php 
+<?php
 
-class Dashboard extends Controller {
-    public static function LoadData(){
-        
+class Dashboard extends Controller
+{
+    public static function get_user_feed()
+    {
     }
 }

@@ -1,5 +1,5 @@
 <section class="home-section">
-    
+
   <div class="main-content">
     <!-- Top navbar -->
     <!-- Page content -->
@@ -11,7 +11,8 @@
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
                   <a href="#">
-                    <img src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg" class="rounded-circle">
+                    <?= Controller::image($user->image, 'rounded-circle') ?>
+                    <!-- <img src="https://demos.creative-tim.com/argon-dashboard/assets/img/theme/team-4.jpg" class="rounded-circle"> -->
                   </a>
                 </div>
               </div>
@@ -43,10 +44,10 @@
               </div>
               <div class="text-center">
                 <h3>
-                  Jessica Jones<span class="font-weight-light">, 27</span>
+                  <?= $user->username ?>
                 </h3>
                 <div class="h5 font-weight-300">
-                  <i class="ni location_pin mr-2"></i>Bucharest, Romania
+                  <i class="ni location_pin mr-2"></i><?= $user->email ?>
                 </div>
                 <div class="h5 mt-4">
                   <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
@@ -74,8 +75,14 @@
               </div>
             </div>
             <div class="card-body">
-                <?php foreach($user->get_user_posts(10) as $key): ?>
-                <?php endforeach; ?>
+              <?php foreach ($user->get_user_posts(10) as $key) : ?>
+                <div class="post-title">
+                  <h2>$key['title']</h2>
+                </div>
+                <div class="post-content">
+                  <p>$key['content']</p>
+                </div>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
@@ -84,4 +91,3 @@
   </div>
 
 </section>
-
